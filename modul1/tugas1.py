@@ -1,3 +1,6 @@
+from math import sqrt as sq
+import random
+#==================================
 def cetakSiku(x) :
   for i in range(x+1) :
     print("*"*i)
@@ -69,3 +72,156 @@ print("standar deviasi =",stdev(l1))
 print("standar deviasi =",stdev(l2))
 
 #=============================================
+
+def isPrime(x) :
+  n = int(x)
+  assert n>=0
+  primaKecil = [2,3,5,7,11]
+  bukanPrKecil = [0,1,4,6,8,9,10]
+  if n in primaKecil :
+    return True
+  elif n in bukanPrKecil :
+    return False
+  else :
+    for i in range(3, int(sq(n))+1,2) :
+      if x % i == 0 : return False
+      else : return True
+
+# testcases
+# isPrime(-5)
+# isPrime(0)
+# isPrime(1)
+# isPrime(45)
+# isPrime(17)
+
+#============
+def faktorPrima(x) :
+  faktor_prima = []
+  faktor = 2
+  while faktor <= x:
+      if x % faktor == 0:
+          faktor_prima.append(faktor)
+          x = x // faktor
+      else:
+          faktor += 1
+  return faktor_prima
+
+# testcases
+print("faktor prima =",faktorPrima(21))
+print("faktor prima =",faktorPrima(143))
+
+#==========================================
+def tigaLima(x) :
+  for i in range(1,x+1) :
+    if i % 3 == 0 and i % 5 == 0 :
+      print("python UMS")
+    elif i % 3 == 0 :
+      print("python")
+    elif i % 5 == 0 :
+      print("UMS")
+    else :
+      print(i)
+
+# testcases
+tigaLima(10)
+
+#=========================================
+def selesaikanABC(a,b,c) :
+  a = float(a)
+  b = float(b)
+  c = float(c)
+  D = b**2 - 4*a*c
+  if D < 0 :
+    print("Determinant is negative, function have no root")
+  else :
+    x1 = (-b + sq(D))/(2*a)
+    x2 = (-b - sq(D))/(2*a)
+    hasil = (x1,x2)
+    print(hasil)
+  
+#testcases
+selesaikanABC(1,2,3)
+
+#========================================
+def apakahKabisat(tahun) :
+  if tahun % 400 == 0 :
+    print(tahun, "merupakan tahun kabisat")
+  elif tahun % 100 == 0 :
+    print(tahun, "bukan tahun kabisat")
+  elif tahun % 4 == 0 :
+    print(tahun, "merupakan tahun kabisat")
+  else :
+    print(tahun, "bukan tahun kabisat")
+
+#testcases
+apakahKabisat(2000)
+
+#==========================================
+def tebakAngka() :
+  angka = random.randint(1,6)
+  k = 0 # menebak attempted
+  print("Coba Tebak angka 1-100")
+  while k < 5 :
+    k +=1
+    jawab = input("Masukkan tebakan ke "+str(k)+" :>")
+    if int(jawab) < angka :
+      print("Itu terlalu kecil")
+    elif int(jawab) > angka :
+      print("Itu terlalu besar")
+    else : 
+      print("Selamat Kamu benar!!")
+      break
+  if k == 5 :
+    print("Kamu telah 5x menebak, jwaban yg benar adalah",angka)
+    
+#testcases
+# tebakAngka()
+    
+#========================================
+def katakan(n):
+    satuan = ['', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan']
+    belasan = ['sepuluh', 'sebelas', 'dua belas', 'tiga belas', 'empat belas', 'lima belas', 'enam belas', 'tujuh belas', 'delapan belas', 'sembilan belas']
+    puluhan = ['', '', 'dua puluh', 'tiga puluh', 'empat puluh', 'lima puluh', 'enam puluh', 'tujuh puluh', 'delapan puluh', 'sembilan puluh']
+    ribuan = ['', 'ribu', 'juta', 'miliar', 'triliun']
+
+    if n == 0:
+        return 'nol'
+
+    def terbilang(n, r):
+        if n == 0:
+            return ''
+        elif n < 10:
+            return satuan[n] + ' ' + r
+        elif n < 20:
+            return belasan[n - 10] + ' ' + r
+        else:
+            return puluhan[n // 10] + ' ' + terbilang(n % 10, r)
+
+    terbilangan = ''
+    for i in range(len(ribuan)):
+        if n % 1000 != 0:
+            terbilangan = terbilang(n % 1000, ribuan[i]) + ' ' + terbilangan
+        n //= 1000
+
+    return terbilangan.strip()
+
+# testcases
+print(katakan(3125750))
+
+#=================================================
+def formatRupiah(n):
+    # Mengonversi bilangan bulat menjadi string dan membalikkan urutannya
+    reversedNominal = str(n)[::-1]
+
+    # Membuat string dalam format rupiah dengan menambahkan titik setiap tiga digit
+    formatTitik = '.'.join([reversedNominal[i:i+3] for i in range(0, len(reversedNominal), 3)])
+
+    # Memutar kembali string dan menambahkan 'Rp ' di depannya
+    return 'Rp ' + formatTitik[::-1]
+
+# testcases
+print(formatRupiah(1500))      # Output: Rp 1.500
+print(formatRupiah(2560000))    # Output: Rp 2.560.000
+
+#=================================================
+
