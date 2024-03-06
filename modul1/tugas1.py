@@ -3,10 +3,11 @@ import random
 #==================================
 def cetakSiku(x) :
   for i in range(x+1) :
-    print("*"*i)
+    print("*"*i) 
 
 # testcase
 cetakSiku(5)
+cetakSiku(3)
 
 #=======================
 def segi4(y,x) :
@@ -16,7 +17,7 @@ def segi4(y,x) :
   print("@"*x)
 
 #testcase
-segi4(4,5)
+segi4(5,5)
 
 #=======================
 def jumlahVokal(kata) :
@@ -109,7 +110,15 @@ def faktorPrima(x) :
 # testcases
 print("faktor prima =",faktorPrima(21))
 print("faktor prima =",faktorPrima(143))
+#===========================================
+def apakahTerkandung(cari, kalimat) :
+  if cari in kalimat :
+    print("benar")
+  else :
+    print("salah")
 
+apakahTerkandung("do", "Indonesia tanah air beta")
+apakahTerkandung("amri", "Indonesia tanah air beta")
 #==========================================
 def tigaLima(x) :
   for i in range(1,x+1) :
@@ -158,7 +167,7 @@ apakahKabisat(2000)
 
 #==========================================
 def tebakAngka() :
-  angka = random.randint(1,6)
+  angka = random.randint(1,5)
   k = 0 # menebak attempted
   print("Coba Tebak angka 1-100")
   while k < 5 :
@@ -178,35 +187,55 @@ def tebakAngka() :
 # tebakAngka()
     
 #========================================
-def katakan(n):
-    satuan = ['', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan']
-    belasan = ['sepuluh', 'sebelas', 'dua belas', 'tiga belas', 'empat belas', 'lima belas', 'enam belas', 'tujuh belas', 'delapan belas', 'sembilan belas']
-    puluhan = ['', '', 'dua puluh', 'tiga puluh', 'empat puluh', 'lima puluh', 'enam puluh', 'tujuh puluh', 'delapan puluh', 'sembilan puluh']
-    ribuan = ['', 'ribu', 'juta', 'miliar', 'triliun']
+def katakan(bilangan):
+    if bilangan == 0:
+        return "Nol"
+    elif bilangan > 999999999999 :
+      return "Angka terlalu besar"
+    
+    satuan = ["", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan"]
+    belasan = ["", "Sebelas", "Dua Belas", "Tiga Belas", "Empat Belas", "Lima Belas", "Enam Belas", "Tujuh Belas", "Delapan Belas", "Sembilan Belas"]
+    puluhan = [" ", "Sepuluh ", "Dua Puluh ", "Tiga Puluh ", "Empat Puluh ", "Lima Puluh ", "Enam Puluh ", "Tujuh Puluh ", "Delapan Puluh ", "Sembilan Puluh "]
 
-    if n == 0:
-        return 'nol'
+    def konversi_triple(angka):
+        result = ""
 
-    def terbilang(n, r):
-        if n == 0:
-            return ''
-        elif n < 10:
-            return satuan[n] + ' ' + r
-        elif n < 20:
-            return belasan[n - 10] + ' ' + r
+        if angka // 100 > 0:
+            result += satuan[angka // 100] + " Ratus "
+
+        angka %= 100
+
+        if angka // 10 == 1:
+            result += belasan[angka % 10]
         else:
-            return puluhan[n // 10] + ' ' + terbilang(n % 10, r)
+            result += puluhan[angka // 10] + satuan[angka % 10]
 
-    terbilangan = ''
-    for i in range(len(ribuan)):
-        if n % 1000 != 0:
-            terbilangan = terbilang(n % 1000, ribuan[i]) + ' ' + terbilangan
-        n //= 1000
+        return result
 
-    return terbilangan.strip()
+    miliar = bilangan // 1000000000
+    juta = (bilangan % 1000000000) // 1000000
+    ribu = (bilangan % 1000000) // 1000
+    sisa = bilangan % 1000
 
-# testcases
-print(katakan(3125750))
+    result = ""
+
+    if miliar > 0:
+        result += konversi_triple(miliar) + " Miliar "
+
+    if juta > 0:
+        result += konversi_triple(juta) + " Juta "
+
+    if ribu > 0:
+        result += konversi_triple(ribu) + " Ribu "
+
+    result += konversi_triple(sisa)
+    
+    result = result.replace("Satu Ratus","Seratus")
+
+    return result.strip()
+
+print(katakan(3125150))
+print(katakan(9999999999999))
 
 #=================================================
 def formatRupiah(n):
