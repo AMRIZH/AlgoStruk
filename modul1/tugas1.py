@@ -74,19 +74,21 @@ print("standar deviasi =",stdev(l2))
 
 #=============================================
 
-def isPrime(x) :
-  n = int(x)
-  assert n>=0
-  primaKecil = [2,3,5,7,11]
-  bukanPrKecil = [0,1,4,6,8,9,10]
-  if n in primaKecil :
-    return True
-  elif n in bukanPrKecil :
-    return False
-  else :
-    for i in range(3, int(sq(n))+1,2) :
-      if x % i == 0 : return False
-      else : return True
+def isPrime(x):
+    if x < 2: # 1 , zero , negative number is not prime 
+        print("Not prime")
+    elif x == 2: # 2 is prime number
+        print("Prime")
+    elif x % 2 == 0: # even number is not prime 
+        print("Not prime")
+    # checks all even numbers from 3 to the root of x, with rounding.
+    else:
+        for i in range(3, int(sq(x)) +1 , 2): 
+            if x % i == 0:
+                print("Not prime")
+                break
+        else:
+            print("Prime")
 
 # testcases
 # isPrime(-5)
