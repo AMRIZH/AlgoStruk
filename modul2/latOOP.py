@@ -15,7 +15,26 @@ class Pesan(object):
     print("kalimat ini memiliki",len(self.teks),"karakter")
   def perbarui(self, stringBaru):
     self.teks = stringBaru
-
+  
+  #method apakah terkandung
+  def apakahTerkandung(self, strKandungan) :
+    return strKandungan in self.teks
+  def hitungKonsonan(self) :
+    k = 0
+    konson = ('b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z')
+    for i in self.teks :
+      if i.lower() in konson :
+        k +=1
+    return k
+  def hitungVokal(self) :
+    v = 0
+    vokal = ('a', 'e', 'i', 'o', 'u')
+    for i in self.teks :
+      if i.lower() in vokal :
+        v +=1
+    return v
+  
+#=============================================
 class Manusia(object):
   """ Class 'Manusia' dengan inisiasi 'nama' """
   def __init__(self,nama):
@@ -33,10 +52,10 @@ class Manusia(object):
   
 ## Kali ini melarikannya lewat file yang sama.
 ## Lewat python shell juga bisa.
-p1 = Manusia('Fatimah')
-p1.ucapkanSalam()
-
-class Mahasiswa(object):
+# p1 = Manusia('Fatimah')
+# p1.ucapkanSalam()
+#===================
+class Mahasiswa(Manusia):
   def __init__(self, nama, NIM, kota, us):
     """Metode inisiasi ini menutupi metode inisiasi di class Manusia."""
     self.nama = nama
