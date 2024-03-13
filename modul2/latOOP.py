@@ -1,6 +1,5 @@
 class Pesan(object):
   """Sebuah class bernama pesan"""
-
   def __init__(self, sebuahString):
     self.teks = sebuahString
   def cetakIni(self):
@@ -76,14 +75,31 @@ class Mahasiswa(Manusia):
   def ambilNIM(self):
     return self.NIM
     
-  def ambilUangSaku(self):
-    return self.uangSaku
+  # def ambilUangSaku(self):
+  #   return self.uangSaku
     
   def makan(self, s):
     """Metode ini menutupi metode ’makan’-nya class Manusia. Mahasiswa kalau makan sambil belajar."""
     print("Saya baru saja makan", s, "sambil belajar.")
     self.keadaan = 'kenyang'
+    
+#====###====#
 
+  def perbaruiKotaTinggal(self, kota):
+    self.kotaTinggal = kota
+  def ambilKotaTinggal(self) :
+    print(self.kotaTinggal)
+  def ambilUangSaku(self):
+    return self.uangSaku
+  def tambahUangSaku(self, uang):
+    self.uangSaku += uang
+  def listKuliah(self) :
+    print(self.kuliah)
+  def ambilKuliah(self, matkul) :
+    self.kuliah.append(matkul)
+  def hapusKuliah(self, matkul) :
+    self.kuliah.remove(matkul)
+  
 #========================
 class MhsTIF(Mahasiswa): # perhatikan class induknya: Mahasiswa
   """Class MhsTIF yang dibangun dari class Mahasiswa"""

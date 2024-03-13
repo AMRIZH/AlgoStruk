@@ -76,19 +76,24 @@ print("standar deviasi =",stdev(l2))
 
 def isPrime(x):
     if x < 2: # 1 , zero , negative number is not prime 
-        print("Not prime")
+        # print("Not prime")
+        return False
     elif x == 2: # 2 is prime number
-        print("Prime")
+        # print("Prime")
+        return True
     elif x % 2 == 0: # even number is not prime 
-        print("Not prime")
+        # print("Not prime")
+        return False
     # checks all even numbers from 3 to the root of x, with rounding.
     else:
         for i in range(3, int(sq(x)) +1 , 2): 
             if x % i == 0:
-                print("Not prime")
-                break
+                return False
+                # print("Not prime")
+                # break
         else:
-            print("Prime")
+            # print("Prime")
+            return True
 
 # testcases
 # isPrime(-5)
