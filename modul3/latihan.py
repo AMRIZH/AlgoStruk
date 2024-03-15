@@ -51,9 +51,9 @@ b = Node(52)
 c = Node(18)
 a.next = b
 b.next = c
-print(a.data)
-print(a.next.data)
-print(a.next.next.data)
+print(a.data) #11
+print(a.next.data) #52
+print(a.next.next.data) #18
 
 def kunjungi( head ):
   curNode = head
