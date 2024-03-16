@@ -1,85 +1,96 @@
+# linked list
+class Node(object):
+  """This is a node object"""
+  def __init__(self, data=None):
+    self.data = data
+    self.pointer = None
 
-def consistent(matrik) :
-  for i in matrik :
-    if len(i) != len(matrik[1]) : # check if all inner array have similar length
-      return False
-  return True
+class LinkList(object):
+  def __init__(self,head) : # define head of new linlis
+    self.head = head
+    
+  def PrintLinkedList(self): # print all members of linked list
+    printval = self.head
+    line = []
+    while printval is not None:
+      line.append(printval.data)
+      printval = printval.pointer
+    print(line)
+
+  def searchData(self, searchData): # search node with certain data
+    printval = self.head
+    while printval is not None:
+      if printval.data == searchData :
+        return printval
+      printval = printval.pointer
   
-def getMatrixSize(matrik) :
-  if consistent(matrik) : 
-    return (len(matrik), len(matrik[0])) # tinggi x lebar
-  else :
-    print("Not consistent matrik")
-    return None
+  def getDataPosition(self, data):  # return the position of the node with the given data
+        position = 0
+        current_node = self.head
+        while current_node is not None:
+            if current_node.data == data:
+                return position
+            current_node = current_node.pointer
+            position += 1
+        return -1  # data not found in the linked list
+      
+  def AtBegining(self,newdata): # insert new node atBegining
+    NewNode = Node(newdata)
+    NewNode.pointer = self.head
+    self.head = NewNode
+    
+  def AtEnd(self, newdata): # insert new node atEnd
+    NewNode = Node(newdata)
+    laste = self.head
+    while(laste.pointer != None):
+      laste = laste.pointer
+    laste.pointer=NewNode
+      
+  def Inbetween(self,middle_node,newdata): # insert new node in middle
+    NewNode = Node(newdata)
+    NewNode.pointer = middle_node.pointer
+    middle_node.pointer = NewNode
+    
+  def RemoveNode(self, Removekey): # remove node
+    HeadVal = self.head
+    if (HeadVal is not None):
+      if (HeadVal.data == Removekey):
+        self.head = HeadVal.pointer
+        HeadVal = None
+        return
+    while (HeadVal is not None):
+      if HeadVal.data == Removekey:
+        break
+      prev = HeadVal
+      HeadVal = HeadVal.pointer
+    if (HeadVal == None):
+      return
+    prev.pointer = HeadVal.pointer
+    HeadVal = None
+    
+# make initial Nodes & their pointers
+a = Node(5)
+b = Node(2)
+c = Node(6)
+d = Node(9)
+a.pointer = b
+b.pointer = c
+c.pointer = d
 
-def sumMatrix2(matrik1 ,matrik2):
-  if consistent(matrik1) and consistent(matrik2):
-    size1 = getMatrixSize(matrik1)
-    size2 = getMatrixSize(matrik2)
-    if size1 != size2 :
-      print("Matrix dimensions must be the same for addition.")
-      return None
-    result = [[0 for j in range(size1[1])] for i in range(size1[0])] # create zero matrik with result size
-    for i in range(size1[1]):
-      for j in range(size1[0]):
-        result[i][j] = matrik1[i][j] + matrik2[i][j]
-    return result
-  else :
-    print("either or both matrix is not consistent")
-    return None
-
-def sumMatrix(matrik1 ,matrik2):
-  if consistent(matrik1) and consistent(matrik2): # check matrix consstency
-    size1 = getMatrixSize(matrik1) # determine size of matrix
-    size2 = getMatrixSize(matrik2) 
-    if size1 != size2 : # addition must same size
-      print("Matrix dimensions must be the same for addition.")
-      return None
-    result = [] # new list to store result
-    for i in range(size1[0]):
-        row = [] # row of new list , reset to empty list every iteration
-        for j in range(size1[1]):
-            row.append(matrik1[i][j] + matrik2[i][j])
-        result.append(row)
-  else :
-    print("either or both matrix are not consistent")
-    return None
-  
-def determinant(matrik) :
-  if not consistent(matrik) : # matrix must consistent/valid
-    return None
-  size = getMatrixSize(matrik)
-  if size[0] != size[1] : # matrix must n*n in size
-    return None
-  if size[0] == 1: # single element matrix, the determinant is the only element
-    return matrik[0][0]
-  if size[0] == 2: # 2*2 size matrix, the determinant is a*d-b*c
-      return matrik[0][0] * matrik[1][1] - matrik[0][1] * matrik[1][0]
-  det = 0
-  for i in range(size[0]): # more than 2*2 size matrix
-      submatrix = [row[:i] + row[i+1:] for row in (matrik[:i] + matrik[i+1:])]
-      det += ((-1) ** i) * matrik[0][i] * determinant(submatrix)
-  return det
-
-#=================================================
-# testcases
-matrik1 = [[1, 2, 3], [1, 1, 2], [2, 1 , 2]]
-matrik2 = [[1, 3, 1], [0, 1, 0], [2, 0 , 2]]
-
-# consistency and validation CHECK
-if consistent(matrik1) :
-  print(matrik1, "konsisten")
-
-# check matrix size
-print(getMatrixSize(matrik1))
-
-# add 2 matrices
-tambah = sumMatrix(matrik1,matrik2)
-print(tambah)
-tambah2 = sumMatrix2(matrik1,matrik2)
-print(tambah2)
-
-# check matrix determinant size 
-print(determinant(matrik1))
-print(determinant(matrik2))
- 
+linlis = LinkList(a) #create a new linlist
+linlis.PrintLinkedList() #print the linlist traversing
+print("===========================")
+linlis.AtBegining(3) #insert at beginning
+linlis.PrintLinkedList()
+print("===========================")
+linlis.AtEnd(7) #insert at end of list
+linlis.PrintLinkedList()
+print("===========================")
+linlis.Inbetween(b,50) # insert Node after b node
+linlis.PrintLinkedList()
+print("===========================")
+linlis.RemoveNode(50) # remove node with data 50
+linlis.PrintLinkedList() # 3+5+2+6+9+7
+print("==========================")
+# linlis.searchData(6)
+print(linlis.getDataPosition(6))
