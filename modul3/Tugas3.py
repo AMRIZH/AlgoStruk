@@ -17,23 +17,23 @@ class LinkList(object):
       printval = printval.pointer
     print(line)
 
-  def searchData(self, searchData): # search node with certain data
-    printval = self.head
-    while printval is not None:
-      if printval.data == searchData :
-        return printval
-      printval = printval.pointer
+  # def searchData(self, searchData): # search node with certain data
+  #   printval = self.head
+  #   while printval is not None:
+  #     if printval.data == searchData :
+  #       return printval
+  #     printval = printval.pointer
   
   def getDataPosition(self, data):  # return the position of the node with the given data
-        position = 0
-        current_node = self.head
-        while current_node is not None:
-            if current_node.data == data:
-                return position
-            current_node = current_node.pointer
-            position += 1
-        return -1  # data not found in the linked list
-      
+    position = 0
+    current_node = self.head
+    while current_node is not None:
+        if current_node.data == data:
+            return position
+        current_node = current_node.pointer
+        position += 1
+    return -1  # data not found in the linked list
+  
   def AtBegining(self,newdata): # insert new node atBegining
     NewNode = Node(newdata)
     NewNode.pointer = self.head

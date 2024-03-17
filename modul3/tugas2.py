@@ -6,6 +6,8 @@ def matrixZero(n ,m = None) :
   result = [[0 for j in range(m)] for i in range(n)] # create zero matrik with result size
   return result
 
+# matrix identity
+
 def identityMatrix(n) :
   result = [[0 for j in range(n)] for i in range(n)] # create zero matrik with result size
   for i in range(n) :
