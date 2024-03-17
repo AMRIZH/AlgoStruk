@@ -11,12 +11,11 @@ class MhsTIF(object):
     self.uangsaku = uangsaku
 
 #================================================================
-def mergeSort(A):
-    
-    if len(A) > 1:
-        mid = len(A) // 2
-        separuhKiri = A[:mid]
-        separuhKanan = A[mid:]
+def mergeSort(daftar):
+    if len(daftar) > 1:
+        mid = len(daftar) // 2
+        separuhKiri = daftar[:mid].NIM
+        separuhKanan = daftar[mid:].NIM
         
         mergeSort(separuhKiri)  
         mergeSort(separuhKanan)  
@@ -24,54 +23,53 @@ def mergeSort(A):
         i = 0 ; j = 0 ; k = 0
         while i < len(separuhKiri) and j < len(separuhKanan):
             if separuhKiri[i] < separuhKanan[j]:  
-                A[k] = separuhKiri[i]            
+                daftar[k].NIM = separuhKiri[i]         
                 i = i + 1                        
             else:                                
-                A[k] = separuhKanan[j]           
+                daftar[k].NIM = separuhKanan[j]           
                 j = j + 1                       
             k = k + 1                            
 
         while i < len(separuhKiri):
-            A[k] = separuhKiri[i]    
+            daftar[k].NIM = separuhKiri[i]    
             i = i + 1                
             k = k + 1                
 
         while j < len(separuhKanan):
-            A[k] = separuhKanan[j]   
+            daftar[k].NIM = separuhKanan[j]   
             j = j + 1                
             k = k + 1                
-        
 
 #================================================================
-def partisi(A, awal, akhir):
-    nilaiPivot = A[awal]  
+def partisi(daftar, awal, akhir):
+    nilaiPivot = daftar[awal].NIM
     penandaKiri = awal + 1  
     penandaKanan = akhir  
     selesai = False
     
     while not selesai:  
         while penandaKiri <= penandaKanan and \
-                A[penandaKiri] <= nilaiPivot:
+                daftar[penandaKiri].NIM <= nilaiPivot:
             penandaKiri = penandaKiri + 1            
-        while A[penandaKanan] >= nilaiPivot and \
+        while daftar[penandaKanan].NIM >= nilaiPivot and \
                 penandaKanan >= penandaKiri:
             penandaKanan = penandaKanan - 1  
         if penandaKanan < penandaKiri:
             selesai = True
         else:
-            swap(A, A[penandaKiri], A[penandaKanan])
+            swap(daftar, daftar[penandaKiri], daftar[penandaKanan])
             
-    swap(A, A[penandaKiri], A[penandaKanan]) 
+    swap(daftar, daftar[penandaKiri], daftar[penandaKanan]) 
     return penandaKanan  
   
-def quickSort(A):
-    quickSortBantu(A, 0, len(A) - 1 )  
+def quickSort(daftar):
+    quickSortBantu(daftar, 0, len(daftar) - 1 )  
 
-def quickSortBantu(A, awal, akhir):
+def quickSortBantu(daftar, awal, akhir):
     if awal < akhir:
-        titikBelah = partisi(A, awal, akhir)  
-        quickSortBantu(A, awal, titikBelah - 1)  
-        quickSortBantu(A, titikBelah + 1, akhir)  
+        titikBelah = partisi(daftar, awal, akhir)  
+        quickSortBantu(daftar, awal, titikBelah - 1)  
+        quickSortBantu(daftar, titikBelah + 1, akhir)  
         
 #================================================================
 c0 = MhsTIF('Ika',10,'Sukoharjo', 240000)
@@ -86,4 +84,4 @@ c8 = MhsTIF('Janto',23,'Klaten', 245000)
 c9 = MhsTIF('Hasan',64,'Karanganyar', 270000)
 c10 = MhsTIF('Khalid',29,'Purwodadi', 230000)
 # Lalu kita membuat daftar mahasiswa dalam bentuk list seperti ini:
-Daftar = [c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]
+daftar = [c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]
