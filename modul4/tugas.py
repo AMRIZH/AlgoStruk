@@ -47,7 +47,6 @@ def uangSakuMinAll(Daftar) :
 def siapaUangSaku(Daftar , uang):
   return [mhs.name for mhs in Daftar if mhs.uangsaku == uang]
 
-
 #======================================================
 c0 = MhsTIF('Ika',10,'Sukoharjo', 240000)
 c1 = MhsTIF('Budi',51,'Sragen', 230000)
@@ -65,6 +64,7 @@ Daftar = [c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]
 
 # print nama mhs yang tinggal di surakarts
 cariKota(Daftar, "Surakarta")
+cariKota(Daftar, "Negara Api")
 
 # ABSEN mahasiswa yang tinggal di surakarta
 print(cariSemuaKota(Daftar,"Klaten"))

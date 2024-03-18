@@ -19,13 +19,47 @@ class LinkList(object):
         position += 1
     return -1  # data not found in the linked list
   
+  def binerSearch(self,data) :
+    dataset = []
+    printval = self.head
+    while printval is not None:
+      dataset.append(printval.data)
+      printval = printval.pointer
+    
+    low = 0
+    high = len(dataset) - 1
+    while low <= high:
+    # Temukan pertengahan runtut itu
+      mid = (high + low) // 2
+      # Apakah pertengahannya memuat target?
+      if dataset[mid] == data:
+          return True
+      # ataukah targetnya di sebelah kirinya?
+      elif data < dataset[mid]:
+          high = mid - 1
+      # ataukah targetnya di sebelah kanannya?
+      else:
+          low = mid + 1
+   # Jika runtutnya tidak bisa dibelah lagi, berarti targetnya tidak ada
+    return False
+  
+  
 # make initial Nodes & their pointers
-a = Node(5)
+a = Node(1)
 b = Node(2)
 c = Node(6)
 d = Node(9)
+e = Node(12)
+f = Node(15)
 a.pointer = b
 b.pointer = c
 c.pointer = d
+d.pointer = e
+d.pointer = f
 
 linlis = LinkList(a) #create a new linlist
+print("Terdapat pada indeks ke", linlis.search(5))
+
+if linlis.binerSearch(4) : print("Data ada di linlis") 
+else : print("data tidak ditemukan")
+

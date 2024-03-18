@@ -1,10 +1,8 @@
 # matriks nol
 
 def matrixZero(n ,m = None) :
-  if m is None :
-    m = n
-  result = [[0 for j in range(m)] for i in range(n)] # create zero matrik with result size
-  return result
+  if m is None : m = n
+  return [[0 for j in range(m)] for i in range(n)] # create zero matrik with result size
 
 # matrix identity
 

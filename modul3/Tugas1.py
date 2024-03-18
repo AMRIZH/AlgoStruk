@@ -45,6 +45,57 @@ def sumMatrix(matrik1 ,matrik2):
     print("either or both matrix are not consistent")
     return None
   
+def multiplyMatrices(matrix1, matrix2):
+    # Check if the matrices are consistent
+    if not consistent(matrix1) or not consistent(matrix2):
+        print("One or both matrices are not consistent.")
+        return None
+
+    # Check if the dimensions are compatible for multiplication
+    size1 = getMatrixSize(matrix1)
+    size2 = getMatrixSize(matrix2)
+    if size1[1] != size2[0]:
+        print("Matrix dimensions are incompatible for multiplication.")
+        return None
+
+    # Create a new matrix with the correct dimensions
+    result = [[0 for j in range(size2[1])] for i in range(size1[0])]
+
+    # Perform matrix multiplication
+    for i in range(size1[0]):
+        for j in range(size2[1]):
+            for k in range(size1[1]):
+                result[i][j] += matrix1[i][k] * matrix2[k][j]
+
+    return result
+
+def multiplyMatrices2(matrix1, matrix2):
+    # Check if the matrices are consistent
+    if not consistent(matrix1) or not consistent(matrix2):
+        print("One or both matrices are not consistent.")
+        return None
+
+    # Check if the dimensions are compatible for multiplication
+    size1 = getMatrixSize(matrix1)
+    size2 = getMatrixSize(matrix2)
+    if size1[1] != size2[0]:
+        print("Matrix dimensions are incompatible for multiplication.")
+        return None
+
+    result = []  # Initialize an empty list to store the result
+
+    # Perform matrix multiplication
+    for i in range(size1[0]):
+        row = []  # Initialize an empty row
+        for j in range(size2[1]):
+            element = 0
+            for k in range(size1[1]):
+                element += matrix1[i][k] * matrix2[k][j]
+            row.append(element)
+        result.append(row)
+
+    return result
+
 def determinant(matrik) :
   if not consistent(matrik) : # matrix must consistent/valid
     return None
@@ -78,6 +129,11 @@ tambah = sumMatrix(matrik1,matrik2)
 print(tambah)
 tambah2 = sumMatrix2(matrik1,matrik2)
 print(tambah2)
+
+#multiply 2 matrix
+print(multiplyMatrices(matrik1,matrik2))
+print(multiplyMatrices2(matrik1,matrik2))
+
 
 # check matrix determinant size 
 print(determinant(matrik1))
