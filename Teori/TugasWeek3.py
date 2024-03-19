@@ -55,7 +55,7 @@ bendera = position(4,3)
 print(bendera.distanceFromOrigin()) # 3,4,5 is one of fast pytagoras rule
 mimbar = position(10,3)
 print(mimbar.distance(mimbar,bendera)) # compare the distance between bendera and mimbar
-# (10,3) - (4,3) = 7 --> the distance is 7
+# (10,3) - (4,3) = 10 -4 = 6 --> the distance is 6
 
 
 
