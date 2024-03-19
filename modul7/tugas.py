@@ -57,7 +57,7 @@ print(di_words)
 #==============================================================================
 import re
 
-def extract_di_tempat(file_path):
+def extract_di_(file_path):
     try:
         # Open the file and read its contents
         with open(file_path, 'r', encoding='utf-8') as file:
