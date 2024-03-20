@@ -1,4 +1,4 @@
-
+from random import randint
 
 def binSe(kumpulan, target):
     # Perform binary search to find the first occurrence of the target
@@ -39,9 +39,10 @@ print(indices)  # Output: [3, 4, 5]
 
 #========================================================
 
-def solveTebakAngka(jumlah, jawaban, kesempatan) :
+def solveTebakAngka(jumlah, kesempatan) :
     low = 0 
     high = jumlah
+    jawaban = randint(1,100)
     while kesempatan > 0 :
         mid = (high+low) // 2
         if mid == jawaban :
@@ -50,7 +51,10 @@ def solveTebakAngka(jumlah, jawaban, kesempatan) :
             high = mid
         else :
             low = mid
-    return -1
+        kesempatan -=1
+    return False
 
-
+#testcases
+if solveTebakAngka(100, 7) : print("benar")
+else : print("salah")
         

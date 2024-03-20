@@ -138,4 +138,3 @@ print(multiplyMatrices2(matrik1,matrik2))
 # check matrix determinant size 
 print(determinant(matrik1))
 print(determinant(matrik2))
- 

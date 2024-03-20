@@ -7,7 +7,7 @@ class Node(object):
 class doblyLinkList(object):
   def __init__(self,head, tail) : # define head & tail of new linlis
     self.head = head
-    self.tail = tail 
+    self.tail = tail
     
   def PrintNext(self): # print all members of linked list
     printval = self.head
@@ -30,6 +30,7 @@ class doblyLinkList(object):
     NewNode.next = self.head
     self.head.prev = NewNode
     self.head = NewNode
+    
   
   def insertAtEnd(self,newdata): # insert new node atBegining
     NewNode = Node(newdata)
