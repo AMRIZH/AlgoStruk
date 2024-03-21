@@ -113,3 +113,8 @@ arr = np.array([1,2,3])
 repeat1 = np.repeat(arr,3) # repeatin array 3times
 print(repeat1)
 
+
+#================================
+a = np.array([1,2,3,4])
+print(a)
+
