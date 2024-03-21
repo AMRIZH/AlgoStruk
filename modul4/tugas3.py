@@ -3,7 +3,7 @@ from random import randint
 def binSe(kumpulan, target):
     # Perform binary search to find the first occurrence of the target
     low = 0
-    high = len(kumpulan) - 1
+    high = len(kumpulan) 
 
     while low <= high:
         mid = (high + low) // 2
@@ -40,17 +40,18 @@ print(indices)  # Output: [3, 4, 5]
 #========================================================
 
 def solveTebakAngka(jumlah, kesempatan) :
-    low = 0 
+    low = 0
     high = jumlah
-    jawaban = randint(1,100)
+    jawaban = randint(1,jumlah)
     while kesempatan > 0 :
+        # if low <= high :
         mid = (high+low) // 2
         if mid == jawaban :
-            return 1
-        elif mid < jawaban :
-            high = mid
+            return True
+        elif mid > jawaban :
+            high = mid -1
         else :
-            low = mid
+            low = mid +1
         kesempatan -=1
     return False
 

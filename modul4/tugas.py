@@ -25,6 +25,7 @@ def uangSakuMinAll(Daftar) :
   uangMinim = uangSakuMin(Daftar)
   return [mhs.name for mhs in Daftar if mhs.uangsaku == uangMinim]
 
+# method berikut memiliki fungsi yang sama dengan yang diatas
 # from math import inf as infinity
 # def uangSakuMin(Daftar) :
 #   uang = infinity

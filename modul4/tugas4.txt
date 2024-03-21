@@ -22,3 +22,4 @@ sehingga apabila menggunakan algritma binary search untuk menyelesaikan
 tebakan,  hanya butuh 7 kesempatan untuk  menebak 100% tepat pada 1-100
 butuh 10 kesempatan untuk  menebak 100% tepat pada 1-100
 
+100 50 25 12 6 3 1 0
