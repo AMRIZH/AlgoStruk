@@ -101,7 +101,7 @@ def quickSortBantu(A, awal, akhir):
 from time import time as detak
 from random import shuffle as kocok
 import time
-k = range(6000)
+k = list(range(6000))
 kocok(k)
 u_bub = k[:] 
 u_sel = k[:] 

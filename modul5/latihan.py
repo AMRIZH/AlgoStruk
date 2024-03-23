@@ -40,7 +40,7 @@ A = [10, 51, 2, 18, 4, 31, 13, 5, 23, 64, 29]
 from time import time as detak
 from random import shuffle
 
-k = range(1,6001)
+k = list(range(1,6001))
 shuffle(k)
 u_bub = k[:] ## \\\\
 u_sel = k[:] ## -- Jangan lupa simbol [:]-nya!.

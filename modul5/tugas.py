@@ -1,4 +1,7 @@
-from latihan import swap
+def swap(lis,a,b) :
+  temp = lis[a]
+  lis[a] = lis[b]
+  lis[b] = temp
 
 def cariPosisiYangTerkecil(Daftar, dariSini, sampaiSini):
   posisiYangTerkecil = dariSini
@@ -22,7 +25,7 @@ def bubleSortNim(Daftar) :
       for j in range(n-i-1):
           if Daftar[j].NIM > Daftar[j+1].NIM : 
               swap(Daftar,j,j+1)
-  
+              
 def selectionOrderNim(Daftar) :
   n = len(Daftar)
   for i in range(n - 1):
@@ -40,7 +43,10 @@ def insertionSortNim(Daftar):
           pos = pos - 1 # # dan geser ke kanan terusnilai-nilai yang lebih besar
       Daftar[pos].NIM = nilai # -> Pada posisi ini tempatkan nilai elemen ke i.
 
-
+def showUrurtan(Daftar) :
+  for i in Daftar :
+    print("Mahasiswa",i.name,"Memiliki NIM",i.NIM)
+  print("---------------------------------")
 #================================
 c0 = MhsTIF('Ika',10,'Sukoharjo', 240000)
 c1 = MhsTIF('Budi',51,'Sragen', 230000)
@@ -55,3 +61,25 @@ c9 = MhsTIF('Hasan',64,'Karanganyar', 270000)
 c10 = MhsTIF('Khalid',29,'Purwodadi', 230000)
 # Lalu kita membuat daftar mahasiswa dalam bentuk list seperti ini:
 Daftar = [c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]
+
+# pengurutan nama mahasiswa berdasar NIM
+
+# buble sort algorithm
+bubleSortNim(Daftar)
+showUrurtan(Daftar)
+
+# mengembalikan urutan seperti semula
+Daftar = [c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]
+
+# selectionOrder Algorithm
+selectionOrderNim(Daftar)
+showUrurtan(Daftar)
+
+# mengembalikan urutan seperti semula
+Daftar = [c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]
+
+# insertion odrder algorithm
+insertionSortNim(Daftar)
+showUrurtan(Daftar)
+
+

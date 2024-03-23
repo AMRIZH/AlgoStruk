@@ -46,7 +46,7 @@ def uangSakuMinAll(Daftar) :
 #   return k
 
 def siapaUangSaku(Daftar , uang):
-  return [mhs.name for mhs in Daftar if mhs.uangsaku == uang]
+  return [mhs.name for mhs in Daftar if mhs.uangsaku <= uang]
 
 #======================================================
 c0 = MhsTIF('Ika',10,'Sukoharjo', 240000)

@@ -55,10 +55,10 @@ a.pointer = b
 b.pointer = c
 c.pointer = d
 d.pointer = e
-d.pointer = f
+e.pointer = f
 
 linlis = LinkList(a) #create a new linlist
-print("Terdapat pada indeks ke", linlis.search(5))
+print("Terdapat pada indeks ke", linlis.search(9))
 
 # if linlis.binerSearch(4) : print("Data ada di linlis") 
 # else : print("data tidak ditemukan")

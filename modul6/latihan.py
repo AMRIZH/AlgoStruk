@@ -68,21 +68,18 @@ print(alist)
 #================================================================
 def partisi(A, awal, akhir):
     nilaiPivot = A[awal]  # Di sini nilaiPivot kita ambil dari elemen yang paling kiri.
-
     penandaKiri = awal + 1  # Posisi awal penandaKiri. Lihat Gambar 6.3.
     penandaKanan = akhir  # Posisi awal penandaKanan.
-
     selesai = False
+    
     while not selesai:  # loop di bawah adalah untuk mengatur ulang posisi semua elemen
 
-        while penandaKiri <= penandaKanan and \
-                A[penandaKiri] <= nilaiPivot:
+        while penandaKiri <= penandaKanan and A[penandaKiri] <= nilaiPivot:
             penandaKiri = penandaKiri + 1  # penandaKiri bergerak ke kanan,
             # sampai ketemu suatu nilai yang
             # lebih besar dari nilaiPivot
 
-        while A[penandaKanan] >= nilaiPivot and \
-                penandaKanan >= penandaKiri:
+        while A[penandaKanan] >= nilaiPivot and penandaKanan >= penandaKiri:
             penandaKanan = penandaKanan - 1  # penandaKanan bergerak ke kiri,
             # sampai ketemu suatu nilai yang
             # lebih kecil dari nilaiPivot
@@ -115,4 +112,11 @@ def quickSortBantu(A, awal, akhir):
         quickSortBantu(A, awal, titikBelah - 1)  # Ini rekursi untuk belah sisi kiri
         quickSortBantu(A, titikBelah + 1, akhir)  # dan belah sisi kanan.
   
-  
+
+D = [1,2,54,21,76,221,34,567,43,5,4,87,11,13,42]
+mergeSort(D)
+print(D)
+
+D = [1,2,54,21,76,221,34,567,43,5,4,87,11,13,42]
+quickSort(D)
+print(D)
