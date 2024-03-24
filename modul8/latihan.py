@@ -68,21 +68,37 @@ def cetakBiner(d):
 
 #========================================================
 class Queue(object):
-  def __init__(self):
-      self.qlist = []
+    def __init__(self):
+        self.qlist = []
 
-  def isEmpty(self):
-      return len(self) == 0
+    def isEmpty(self):
+        return len(self) == 0
 
-  def __len__(self):
-      return len(self.qlist)
+    def __len__(self):
+        return len(self.qlist)
 
-  def enqueue(self, data):
-      self.qlist.append(data)
+    def enqueue(self, data):
+        self.qlist.append(data)
 
-  def dequeue(self):
-      assert not self.isEmpty(), "Antrian sedang kosong."
-      return self.qlist.pop(0)
+    def dequeue(self):
+        assert not self.isEmpty(), "Antrian sedang kosong."
+        return self.qlist.pop(0)
+    
+    def getFrontMost(self):
+        """
+        Mengembalikan item yang paling depan tanpa menghapusnya.
+        """
+        if self.isEmpty():
+            return None
+        return self.qlist[0]
+
+    def getRearMost(self):
+        """
+        Mengembalikan item yang paling belakang tanpa menghapusnya.
+        """
+        if self.isEmpty():
+            return None
+        return self.qlist[-1]
 
 #=======================================================
 class PriorityQueue(object):
