@@ -78,13 +78,11 @@ print("---------------------------\n")
 # no 2
 # in
 stmt = "sorted(generate_list(3000))"
-setup_code = """
-    import random
-    def generate_list(n):
-        L = list(range(n))
-        random.shuffle(L)
-        return L
-    """
+setup_code = """import random
+def generate_list(n):
+  L = list(range(n))
+  random.shuffle(L)
+  return L"""
 for _ in range(5):
-    timer = timeit.timeit(stmt, setup_code, number=1)
-    print(f"Sorting 3000 numbers, took {timer:.7f} seconds")
+  timer = timeit.timeit(stmt, setup_code, number=1)
+  print(f"Sorting 3000 numbers, took {timer:.7f} seconds")
