@@ -12,14 +12,12 @@ def extract_me_words(file_path):
 
         # Convert the list to a tuple
         me_words_tuple = tuple(me_words)
-
         return me_words_tuple
 
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
     except Exception as e:
         print(f"An error occurred: {e}")
-
     return ()
   
 # testcase
@@ -47,7 +45,6 @@ def extract_di_words(file_path):
         print(f"Error: File '{file_path}' tidak ditemukan.")
     except Exception as e:
         print(f"Terjadi kesalahan: {e}")
-
     return ()
 
 file_path = 'C:\Amri\KULIAH_UMS\Semester4\labASD\modul7\indonesia.txt'
@@ -55,8 +52,6 @@ di_words = extract_di_words(file_path)
 print(di_words)
 
 #==============================================================================
-import re
-
 def extract_di_(file_path):
     try:
         # Open the file and read its contents

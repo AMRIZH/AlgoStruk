@@ -25,28 +25,8 @@ def uangSakuMinAll(Daftar) :
   uangMinim = uangSakuMin(Daftar)
   return [mhs.name for mhs in Daftar if mhs.uangsaku == uangMinim]
 
-# method berikut memiliki fungsi yang sama dengan yang diatas
-# from math import inf as infinity
-# def uangSakuMin(Daftar) :
-#   uang = infinity
-#   for i in Daftar:
-#     if i.uangsaku < uang :
-#       uang = i.uangsaku
-#   return uang
-  
-# def uangSakuMinAll2(Daftar) :
-#   uang = infinity
-#   k =[]
-#   for i in Daftar:
-#     if i.uangsaku < uang :
-#       uang = i.uangsaku
-#   for j in range(len(Daftar)):
-#     if Daftar[j].uangsaku == uang :
-#       k.append(Daftar[j].name)
-#   return k
-
 def siapaUangSaku(Daftar , uang):
-  return [mhs.name for mhs in Daftar if mhs.uangsaku <= uang]
+  return [mhs.name for mhs in Daftar if mhs.uangsaku < uang]
 
 #======================================================
 c0 = MhsTIF('Ika',10,'Sukoharjo', 240000)
@@ -68,15 +48,38 @@ cariKota(Daftar, "Surakarta")
 cariKota(Daftar, "Negara Api")
 
 # ABSEN mahasiswa yang tinggal di surakarta
-print(cariSemuaKota(Daftar,"Klaten"))
+print(cariSemuaKota(Daftar,"Surakarta"))
 
 # mencari uang saku terkecil
 print(uangSakuMin(Daftar))
 
+# siapa saja yang memiliki uang saku terkecil
 print(uangSakuMinAll(Daftar))
 
-# mencari mhs yang sangu nya 250000
+# mencari mhs yang sangu nya dibawah 250000
 print(siapaUangSaku(Daftar,250000))
 
 
 
+#========================================================
+# junk code
+
+# method berikut memiliki fungsi yang sama dengan yang diatas
+# from math import inf as infinity
+# def uangSakuMin(Daftar) :
+#   uang = infinity
+#   for i in Daftar:
+#     if i.uangsaku < uang :
+#       uang = i.uangsaku
+#   return uang
+  
+# def uangSakuMinAll2(Daftar) :
+#   uang = infinity
+#   k =[]
+#   for i in Daftar:
+#     if i.uangsaku < uang :
+#       uang = i.uangsaku
+#   for j in range(len(Daftar)):
+#     if Daftar[j].uangsaku == uang :
+#       k.append(Daftar[j].name)
+#   return k

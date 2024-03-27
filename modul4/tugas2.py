@@ -64,3 +64,5 @@ print("Terdapat pada indeks ke", linlis.search(9))
 # else : print("data tidak ditemukan")
 
 print(linlis.binerSearch(9))
+
+print(linlis.search(15))
