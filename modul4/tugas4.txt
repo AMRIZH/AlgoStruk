@@ -1,0 +1,26 @@
+Pada permainan tebak angka yang sudah kamu buat di Modul 1 (soal nomer 12, halaman 16), kalau angka yang harus ditebak berada di antara 1 dan 100, seharusnya maksimal
+jumlah tebakan adalah 7. Kalau antara 1 dan 1000, maksimal jumlah tebakan adalah 10.
+Mengapa seperti itu? Bagaimanakah polanya?
+
+karena pada tebakan 1-100 hanya butuh 7 tebakan untuk mendapat 100% kemungkinan berhasil
+
+100 / 2**7 = 100 / 128 =  0.78125
+
+sedangkan jika hanya 6 kesempatan
+
+100 / 2**6 = 100 / 64 =  1.5625  #masih ada potensi salah
+
+pada tebakan 1-1000 , butuh 10 kesempatan untuk mendapat 100% kemungkinan berhasil
+
+1000 / 2**10 = 1000 / 1024 =  0.9765625 
+
+sedangkan jika hanya 9 kesempatan 
+
+1000 / 2**9 = 1000 / 512  =  1.953125 
+
+sehingga apabila menggunakan algritma binary search untuk menyelesaikan 
+tebakan,  hanya butuh 7 kesempatan untuk  menebak 100% tepat pada 1-100
+butuh 10 kesempatan untuk  menebak 100% tepat pada 1-100
+
+100 50 25 13 7 4 2 1
+1000 500 250 125 63 32 16 8 4 2 1
