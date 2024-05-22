@@ -16,8 +16,8 @@ class Stack(object):
       assert not self.isEmpty(), "Stack kosong. Tidak bisa di-pop"
       return self.items.pop()
 
-  def push(self, data):  # Mendorong item baru ke stack.
-      self.items.append(data)
+  def push(self, item):  # Mendorong item baru ke stack.
+      self.items.append(item)
 
 #=============================================================
 
@@ -84,18 +84,12 @@ class Queue(object):
         assert not self.isEmpty(), "Antrian sedang kosong."
         return self.qlist.pop(0)
     
-    def getFrontMost(self):
-        """
-        Mengembalikan item yang paling depan tanpa menghapusnya.
-        """
+    def getFrontMost(self): # Peek : Mengembalikan item yang paling depan tanpa menghapusnya.
         if self.isEmpty():
             return None
         return self.qlist[0]
 
-    def getRearMost(self):
-        """
-        Mengembalikan item yang paling belakang tanpa menghapusnya.
-        """
+    def getRearMost(self): #Mengembalikan item yang paling belakang tanpa menghapusnya.
         if self.isEmpty():
             return None
         return self.qlist[-1]
