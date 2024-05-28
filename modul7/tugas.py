@@ -75,7 +75,7 @@ def extract_di_(file_path):
 
 def CountryInnovation(KEI) :
     # Buka file KEI.html dan baca isinya
-    with open(KEI, 'r', encoding='latin1') as f:
+    with open(KEI, 'r', encoding='utf-8') as f:
         teks = f.read()
 
     # Ekstrak nama-nama negara menggunakan regex
