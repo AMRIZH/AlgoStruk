@@ -5,13 +5,24 @@ def cetakHexa2(decimal) :
   hex_chars = "0123456789ABCDEF"
   if decimal == 0:
       return "0"
-  hexadecimal = ""
+  hexadecimal = "" # menyipan hasil konversi dari LSB ke MSB
   while decimal > 0:
       remainder = decimal % 16
       hexadecimal = hex_chars[remainder] + hexadecimal
       decimal = decimal // 16
   return hexadecimal
 
+# def cetakHexa3(decimal):
+#     hex_chars = "0123456789ABCDEF"
+#     if decimal == 0:
+#         return "0"
+#     hexadecimal = ""
+#     while decimal > 0:
+#         remainder = decimal % 16
+#         hexadecimal = hex_chars[remainder] + hexadecimal
+#         decimal = decimal // 16
+#     return hexadecimal
+    
 #==========================================================
 from latihan import Stack
 def no2():
@@ -19,17 +30,21 @@ def no2():
   for i in range(16):
       if i % 3 == 0:
           nilai.push(i)
-      print(nilai.items)
+      print(nilai.items,f" -> mencoba memasukkan: {i}")
 
 #======
 def no3():
   nilai = Stack()
   for i in range(16):
-      if i % 3 == 0:
-          nilai.push(i)
-      elif i % 4 == 0:
-          nilai.pop()
-      print(nilai.items)
+    if i % 3 == 0:
+        nilai.push(i)
+        print(f"mencoba memasukkan: {i}")
+    elif i % 4 == 0:
+        print(f"pop item teratas {nilai.peek()}")
+        nilai.pop()
+    else:
+        print(f"memeriksa {i}")
+    print(nilai.items)
 
 #=======================================================
 class Queue(object):
@@ -135,15 +150,16 @@ class PriorityQEntry(object):
 print(cetakHexa(12))
 print(cetakHexa(31))
 print(cetakHexa(229))
-print(cetakHexa(225))
+print(cetakHexa(255))
 print(cetakHexa(31519))
 print("---------")
 print(cetakHexa2(12))
 print(cetakHexa2(31))
 print(cetakHexa2(229))
-print(cetakHexa2(225))
+print(cetakHexa2(255))
 print(cetakHexa2(31519))
 print("---------")
+
 #------------------------
 no2()
 print("---------")
