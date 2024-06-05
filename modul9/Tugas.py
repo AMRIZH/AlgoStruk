@@ -35,4 +35,30 @@ print([minLevel(4),maxLevel(4)])
 print([minLevel(5),maxLevel(5)])
 #=================================================================
 
+def binomial_coefficient(n, k):
+    """
+    Calculate the binomial coefficient C(n, k), which is the number of ways to choose k elements from a set of n elements.
+    """
+    if k > n:
+        return 0
+    if k == 0 or k == n:
+        return 1
+    k = min(k, n - k)  # take advantage of symmetry
+    c = 1
+    for i in range(k):
+        c = c * (n - i) // (i + 1)
+    return c
+
+def count_binary_tree_shapes(n):
+    """
+    Determine the number of distinct binary tree shapes that can be formed with n nodes.
+    """
+    if n < 0:
+        return 0
+    catalan_number = binomial_coefficient(2 * n, n) // (n + 1)
+    return catalan_number
+
+# Example usage
+n = 4
+print("Number of distinct binary tree shapes with", n, "nodes:", count_binary_tree_shapes(n))
 
