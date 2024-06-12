@@ -4,24 +4,24 @@ class SimpulPohonBiner(object):
         self.kiri = None
         self.kanan = None
 
-# Membuat simpul-simpul dan mengisi data
-A = SimpulPohonBiner('Ambarawa')
-B = SimpulPohonBiner('Bantul')
-C = SimpulPohonBiner('Cimahi')
-D = SimpulPohonBiner('Denpasar')
-E = SimpulPohonBiner('Enrekang')
-F = SimpulPohonBiner('Flores')
-G = SimpulPohonBiner('Garut')
-H = SimpulPohonBiner('Halmahera Timur')
-I = SimpulPohonBiner('Indramayu')
-J = SimpulPohonBiner('Jakarta')
+# # Membuat simpul-simpul dan mengisi data
+# A = SimpulPohonBiner('Ambarawa')
+# B = SimpulPohonBiner('Bantul')
+# C = SimpulPohonBiner('Cimahi')
+# D = SimpulPohonBiner('Denpasar')
+# E = SimpulPohonBiner('Enrekang')
+# F = SimpulPohonBiner('Flores')
+# G = SimpulPohonBiner('Garut')
+# H = SimpulPohonBiner('Halmahera Timur')
+# I = SimpulPohonBiner('Indramayu')
+# J = SimpulPohonBiner('Jakarta')
 
-# Menghubungkan simpul ortu-anak
-A.kiri = B; A.kanan = C
-B.kiri = D; B.kanan = E
-C.kiri = F; C.kanan = G
-E.kiri = H
-G.kanan = I
+# # Menghubungkan simpul ortu-anak
+# A.kiri = B; A.kanan = C
+# B.kiri = D; B.kanan = E
+# C.kiri = F; C.kanan = G
+# E.kiri = H
+# G.kanan = I
 
 # preorder traversal
 def preorderTrav(subpohon):
@@ -70,20 +70,20 @@ def cetakDataDanLevel(akar, level=0):
 #=================================================================
 # testcasee
 
-# Contoh penggunaan
-print("Ukuran pohon:", ukuranPohon(A))  # Output: Ukuran pohon: 10
-print("Ketinggian pohon:", tinggiPohon(A))  # Output: Ketinggian pohon: 3
+# # Contoh penggunaan
+# print("Ukuran pohon:", ukuranPohon(A))  # Output: Ukuran pohon: 10
+# print("Ketinggian pohon:", tinggiPohon(A))  # Output: Ketinggian pohon: 3
 
-# Contoh penggunaan
-cetakDataDanLevel(A)
-print("====================================")
+# # Contoh penggunaan
+# cetakDataDanLevel(A)
+# print("====================================")
 
-# traversals
-print("Preorder traversal:")
-preorderTrav(A) # Output: A B D E H C F G I
-print("====================================")
-print("Inorder traversal:")
-inorderTrav(A) # Output: D B H E A F C G I
-print("====================================")
-print("Postorder traversal:")
-postorderTrav(A) # Output: D H E B F I G C A
+# # traversals
+# print("Preorder traversal:")
+# preorderTrav(A) # Output: A B D E H C F G I
+# print("====================================")
+# print("Inorder traversal:")
+# inorderTrav(A) # Output: D B H E A F C G I
+# print("====================================")
+# print("Postorder traversal:")
+# postorderTrav(A) # Output: D H E B F I G C A

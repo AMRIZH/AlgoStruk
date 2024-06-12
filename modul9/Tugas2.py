@@ -25,7 +25,7 @@ print(height(A)) # output 3
 
 # ================================
 # Membuat simpul-simpul dan mengisi data
-A = SimpulPohonBiner('Ambarawa')
+A = SimpulPohonBiner('Ambarawa') # root
 B = SimpulPohonBiner('Bantul')
 C = SimpulPohonBiner('Cimahi')
 D = SimpulPohonBiner('Denpasar')

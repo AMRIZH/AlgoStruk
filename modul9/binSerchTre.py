@@ -49,10 +49,10 @@ def postorderTrav(root):
     result.append(root.data)
   return result
 
-# testcases
-print(preorderTrav(A))  # output [56, 37, 22, 43, 40, 78, 60, 83, 85]
-print(inorderTrav(A))   # output [22, 37, 40, 43, 56, 60, 78, 83, 85]
-print(postorderTrav(A)) # output [22, 40, 43, 37, 60, 85, 83, 78, 56]
+# # testcases
+# print(preorderTrav(A))  # output [56, 37, 22, 43, 40, 78, 60, 83, 85]
+# print(inorderTrav(A))   # output [22, 37, 40, 43, 56, 60, 78, 83, 85]
+# print(postorderTrav(A)) # output [22, 40, 43, 37, 60, 85, 83, 78, 56]
 
 
 # Inserting a new node
@@ -174,47 +174,47 @@ def nodes_at_level_helper(node, level, current_level, result):
     nodes_at_level_helper(node.left, level, current_level + 1, result)
     nodes_at_level_helper(node.right, level, current_level + 1, result)
 
-# Example usage
-root = A
-# Inserting nodes
-root = insert(root, 56)
-root = insert(root, 37)
-root = insert(root, 78)
-root = insert(root, 22)
-root = insert(root, 43)
-root = insert(root, 60)
-root = insert(root, 83)
-root = insert(root, 40)
-root = insert(root, 85)
+# # Example usage
+# root = A
+# # Inserting nodes
+# root = insert(root, 56)
+# root = insert(root, 37)
+# root = insert(root, 78)
+# root = insert(root, 22)
+# root = insert(root, 43)
+# root = insert(root, 60)
+# root = insert(root, 83)
+# root = insert(root, 40)
+# root = insert(root, 85)
 
-# Define the tree size
-print("Tree size:", size(root))
+# # Define the tree size
+# print("Tree size:", size(root))
 
-# Define the tree height
-print("Tree height:", height(root))
+# # Define the tree height
+# print("Tree height:", height(root))
 
-# Define the tree width
-print("Tree width:", width(root))
+# # Define the tree width
+# print("Tree width:", width(root))
 
-# Define which nodes are leaves
-print("Leaf nodes:", leaves(root))
+# # Define which nodes are leaves
+# print("Leaf nodes:", leaves(root))
 
-# Define which nodes are internal nodes
-print("Internal nodes:", internal_nodes(root))
+# # Define which nodes are internal nodes
+# print("Internal nodes:", internal_nodes(root))
 
-# Define the depth of a specific node
-print("Depth of node 43:", depth(root, 43))
+# # Define the depth of a specific node
+# print("Depth of node 43:", depth(root, 43))
 
-# Define which nodes are in a specific level
-print("Nodes at level 2:", nodes_at_level(root, 2))
+# # Define which nodes are in a specific level
+# print("Nodes at level 2:", nodes_at_level(root, 2))
 
-# Insert a new node
-root = insert(root, 50)
-print("Tree size after inserting 50:", size(root))
+# # Insert a new node
+# root = insert(root, 50)
+# print("Tree size after inserting 50:", size(root))
 
-# Delete an existing node
-root = delete(root, 37)
-print("Tree size after deleting 37:", size(root))
+# # Delete an existing node
+# root = delete(root, 37)
+# print("Tree size after deleting 37:", size(root))
 
-# check all nodes
-print(preorderTrav(A))  # output [56, 37, 22, 22, 43, 40, 40, 43, 50, 78, 60, 56, 60, 83, 78, 85, 83, 85]
+# # check all nodes
+# print(preorderTrav(A))  # output [56, 37, 22, 22, 43, 40, 40, 43, 50, 78, 60, 56, 60, 83, 78, 85, 83, 85]
