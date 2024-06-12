@@ -59,6 +59,6 @@ def count_binary_tree_shapes(n):
     return catalan_number
 
 # Example usage
-n = 4
+n = 5
 print("Number of distinct binary tree shapes with", n, "nodes:", count_binary_tree_shapes(n))
 
