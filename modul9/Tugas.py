@@ -5,14 +5,13 @@ def maxLevel(treeSize):
   if treeSize <= 0:
       return 0
   return treeSize - 1
-  
 # minimum level pohon biner
 def minLevel(treeSize):
   if treeSize <= 0:
       return 0
   return math.floor(math.log2(treeSize))
 
-# maksimum dan minimum jumlah simpul pada pohon biner dengan level tertentu
+# maksimum jumlah simpul pada pohon biner dengan level tertentu
 def maxNodes(height):
   if height < 0:
     return 0
@@ -23,16 +22,16 @@ def minNodes(height):
     return 0
   return height + 1
 
-# Contoh penggunaan
-print([minLevel(10),maxLevel(10)])
-print([minLevel(35),maxLevel(35)])
-print([minLevel(76),maxLevel(76)])  
-print([minLevel(345),maxLevel(345)])  
-print([minLevel(1),maxLevel(1)])
-print([minLevel(2),maxLevel(2)])
-print([minLevel(3),maxLevel(3)])
-print([minLevel(4),maxLevel(4)])
-print([minLevel(5),maxLevel(5)])
+# testcases
+# print([minLevel(10),maxLevel(10)])
+# print([minLevel(35),maxLevel(35)])
+# print([minLevel(76),maxLevel(76)])  
+# print([minLevel(345),maxLevel(345)])  
+# print([minLevel(1),maxLevel(1)])
+# print([minLevel(2),maxLevel(2)])
+# print([minLevel(3),maxLevel(3)])
+# print([minLevel(4),maxLevel(4)])
+# print([minLevel(5),maxLevel(5)])
 #=================================================================
 
 def binomial_coefficient(n, k):
@@ -49,16 +48,20 @@ def binomial_coefficient(n, k):
         c = c * (n - i) // (i + 1)
     return c
 
+# Determine the number of distinct binary tree shapes that can be formed with n nodes.
 def count_binary_tree_shapes(n):
-    """
-    Determine the number of distinct binary tree shapes that can be formed with n nodes.
-    """
     if n < 0:
         return 0
     catalan_number = binomial_coefficient(2 * n, n) // (n + 1)
     return catalan_number
 
 # Example usage
-n = 5
-print("Number of distinct binary tree shapes with", n, "nodes:", count_binary_tree_shapes(n))
+# n = 5
+# print("Number of distinct binary tree shapes with", n, "nodes:", count_binary_tree_shapes(n))
+
+# testcases
+print(maxNodes(3)) # output 15
+print(maxNodes(4)) # output 31
+print(maxNodes(5)) # output 63
+print(maxNodes(64)) # output 36893488147419103231
 

@@ -40,4 +40,4 @@ For example, let's take the number 8, which is a power of two. In binary, 8 is r
 
 The return n & (n - 1) == 0 statement returns True if n is a power of two and False otherwise. This is because, as explained above, the result of the bitwise AND operation will be 0 if n is a power of two, and the equality check == 0 will return True.
 
-The comment # n & (n - 1) clears the least significant bit of n explains that the operation n & (n - 1) clears the least significant bit of n. This is another way of saying that it sets the least significant 1 in the binary representation of n to 0"""
+The comment # n & (n - 1) clears the least significant bit of n explains that the operation n & (n - 1) clears the least significant bit of n. This is another way of saying that it sets the least significant 1 in the binary representation of n to 0"""                 

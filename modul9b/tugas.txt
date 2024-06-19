@@ -27,12 +27,12 @@ The degrees for each vertex are:
 }
 
 5. Determine the Adjacency List from the graph above!
-A -> B, F
-B -> A, C, C
-C -> B, B, D, E, F
-D -> C
-E -> C
-F -> A, C
+A = B -> F
+B = A -> C -> C
+C = B -> B -> D -> E -> F
+D = C
+E = C
+F = A -> C
 
 6. Determine the Adjacency Matrix from the graph above!
     A B C D E F
@@ -42,3 +42,10 @@ C [ 0 2 0 1 1 1 ]
 D [ 0 0 1 0 0 0 ]
 E [ 0 0 1 0 0 0 ]
 F [ 1 0 1 0 0 0 ]
+
+[[ 0, 1, 0, 0, 0, 1 ],
+[ 1, 0, 2, 0, 0, 0 ],
+[ 0, 2, 0, 1, 1, 1 ],
+[ 0, 0, 1, 0, 0, 0 ],
+[ 0, 0, 1, 0, 0, 0 ],
+[ 1, 0, 1, 0, 0, 0 ]]

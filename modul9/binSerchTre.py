@@ -148,15 +148,18 @@ def internal_nodes(node): # determine which nodes are internal nodes
   return internals
 
 # Node depth
-def depth(root, node_data, current_depth=0): # determine the depth of a specific node
+def depth(root, node_data, current_depth=0): 
   if root is None:
-    return -1
+      return -1
   if root.data == node_data:
-    return current_depth
-  if node_data < root.data:
-    return depth(root.left, node_data, current_depth + 1)
-  else:
-    return depth(root.right, node_data, current_depth + 1)
+      return current_depth
+  # Search in left subtree
+  left_depth = depth(root.left, node_data, current_depth + 1)
+  if left_depth != -1:
+      return left_depth
+  # Search in right subtree
+  right_depth = depth(root.right, node_data, current_depth + 1)
+  return right_depth
 
 # Nodes at specific level
 def nodes_at_level(root, level): # determine which nodes are at a specific level
