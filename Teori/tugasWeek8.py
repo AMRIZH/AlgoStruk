@@ -1,3 +1,4 @@
+# problem 1365 how many numbers are smaller than the current number
 # how many smaller numbers of the current number
 def smallerNumbersThanCurrent(nums):
   newList = [] #store the number of smaller number list

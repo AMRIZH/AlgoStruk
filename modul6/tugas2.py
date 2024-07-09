@@ -10,13 +10,6 @@ def cariPosisiYangTerkecil(A, dariSini, sampaiSini):
       if A[i] < A[posisiYangTerkecil]: 
           posisiYangTerkecil = i
   return posisiYangTerkecil
-  
-def bubbleSort(A):
-  n = len(A)
-  for i in range(n-1): 
-      for j in range(n-i-1): 
-          if A[j] > A[j+1]: 
-              swap(A,j,j+1) 
 
 def selectionSort(A):
   n = len(A)
@@ -24,6 +17,13 @@ def selectionSort(A):
       indexKecil = cariPosisiYangTerkecil(A, i, n)
       if indexKecil != i :
           swap(A, i, indexKecil)
+
+def bubbleSort(A):
+  n = len(A)
+  for i in range(n-1): 
+      for j in range(n-i-1): 
+          if A[j] > A[j+1]: 
+              swap(A,j,j+1) 
             
 def insertionSort(A):
   n = len(A)
