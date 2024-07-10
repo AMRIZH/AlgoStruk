@@ -54,9 +54,13 @@ class minStack(object):
       self.items.append(item)
   
   def get_min(self):
+    if len(self) == 0: # stack kososng
+      return None
     return min(self.items)
   
   def get_min2(self):
+    if len(self) == 0: # stack kososng
+      return None
     minim = inf # infinity
     for i in self.items :
       if i < minim :
@@ -64,12 +68,16 @@ class minStack(object):
     return minim
   
   def get_min3(self) :
+    if len(self) == 0: # stack kososng
+      return None
     lis = []
     for i in self.items:
       lis.append(i)
     return min(lis)
   
   def get_min4(self): # tanpa iterasi langsung ke stack
+    if len(self) == 0: # stack kososng
+      return None
     lis = []
     for i in range(len(self)): # keluarin isi stack
       a = self.pop()
